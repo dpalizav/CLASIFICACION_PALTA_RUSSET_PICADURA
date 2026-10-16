@@ -1,0 +1,18 @@
+prueba/
+*.gsi
+*.tif
+*.tiff
+*.zip
+*.rar
+*.keras
+*.h5
+.ipynb_checkpoints/
+__pycache__/
+.venv/
+
+# Datos y configuración local.
+DATASET_PALTA/
+venv/
+.env
+.DS_Store
+Thumbs.db

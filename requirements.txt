@@ -1,0 +1,10 @@
+# EDA y Feature Engineering. Python 3.12.
+numpy>=1.26,<3
+pandas>=2.2,<4
+matplotlib>=3.8,<4
+Pillow>=10.4,<13
+nbformat>=5.10,<6
+nbclient>=0.10,<1
+ipykernel>=6.29,<8
+ipython>=8.20,<10
+jupyter-client>=8.6,<9
