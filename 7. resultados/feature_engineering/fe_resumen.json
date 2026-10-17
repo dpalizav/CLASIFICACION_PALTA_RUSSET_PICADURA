@@ -1,0 +1,142 @@
+{
+  "etapa": "feature_engineering",
+  "modelo": "ResNet50",
+  "framework": "TensorFlow/Keras",
+  "dataset_relativo": "../DATASET_PALTA",
+  "particion_utilizada": "train",
+  "cantidad_muestra": 24,
+  "muestras_por_clase_maximo": 12,
+  "semilla": 42,
+  "tamano_alto_ancho": [
+    256,
+    512
+  ],
+  "resize": "Lanczos con aspecto conservado y relleno",
+  "relleno_rgb": [
+    124,
+    117,
+    104
+  ],
+  "mascara": "excluye relleno; incluye fondo original",
+  "normalizacion_descriptores": "RGB / 255",
+  "entrada_modelo": "RGB float32 0-255",
+  "preprocesamiento_modelo": "ResNet50 v1: BGR menos [103.939, 116.779, 123.680]",
+  "augmentation_propuesta": "volteo horizontal p=0.5, solo train",
+  "glcm": {
+    "niveles": 16,
+    "distancia": 1,
+    "direcciones": [
+      "horizontal",
+      "vertical"
+    ],
+    "simetrica": true
+  },
+  "validacion_tensorflow": "correcta",
+  "extraccion_profunda": false,
+  "entrenamiento_ejecutado": false,
+  "archivos_muestra": [
+    {
+      "archivo": "train/PICADURA/704F3E54-250505-153013-0.RGB.tiff",
+      "sha256": "b67ae8bbbbdcf4004b8cf3aadff63f7faf8be539224494f560ed85ec850f9314"
+    },
+    {
+      "archivo": "train/PICADURA/704F3E54-250625-091338-2.RGB.tiff",
+      "sha256": "e5b19dff691902621a8e3403cd19fa3852752b56cac79553c00d9206af10cd65"
+    },
+    {
+      "archivo": "train/PICADURA/704F3E54-250626-152213-0.RGB.tiff",
+      "sha256": "59a14606e1d85a7480de147362170e33552454ec70a95b78131f100c37913b7a"
+    },
+    {
+      "archivo": "train/PICADURA/704F3E54-250704-144601-3.RGB.tiff",
+      "sha256": "25740353f85ccf7852625501bb6d158518c30f7d5a67b1f9c261b2a0c5131831"
+    },
+    {
+      "archivo": "train/PICADURA/704F3E54-250819-153448-4.RGB.tiff",
+      "sha256": "27c7518f2935f09809e3ba10720a7181043fd0c5436757f466c8f0da55dce2cd"
+    },
+    {
+      "archivo": "train/PICADURA/704F3E54-250819-153554-8.RGB.tiff",
+      "sha256": "a6eb80df94fe90105dad78f104ea5695ceddf8c167c47cd24ca8d72b855606af"
+    },
+    {
+      "archivo": "train/PICADURA/704F3E54-260507-081813-2.RGB.tiff",
+      "sha256": "b1efdada97e77bb2b3cf1b8de7f9178aa2b81579919283dd9532adff2334a4f5"
+    },
+    {
+      "archivo": "train/PICADURA/704F3E54-260507-081913-2.RGB.tiff",
+      "sha256": "ad43561a93e84a661148c093c6eab19acce661a4d2d20ccf012c3fdf16390c28"
+    },
+    {
+      "archivo": "train/PICADURA/704F3E54-260519-145508-8.RGB.tiff",
+      "sha256": "528070e9b498ff02996ab3c7d6785dbb0e71cb1822b65302a9a2f58ee9fc5182"
+    },
+    {
+      "archivo": "train/PICADURA/704F3E54-260519-145910-8.RGB.tiff",
+      "sha256": "546634f008e0126399fbae5ca5debeb7d824830340edaeb0d973537acfc1a4fa"
+    },
+    {
+      "archivo": "train/PICADURA/704F3E54-260519-150545-2.RGB.tiff",
+      "sha256": "edfe0682b29fb32d016c3be19e6fd72aab52c7524862e38b78db30bc10a7f57c"
+    },
+    {
+      "archivo": "train/PICADURA/704F3E54-260519-163853-8.RGB.tiff",
+      "sha256": "1d15efd6620abb33e8fc1dd9dfb09041b15009ae50c3f2666be495ad5ae04073"
+    },
+    {
+      "archivo": "train/RUSSET/704F3E54-250627-174433-5.RGB.tiff",
+      "sha256": "e04d6ddb52feddde2a928043feab59c40a509dc8c44c1481db2288b8ced4d942"
+    },
+    {
+      "archivo": "train/RUSSET/704F3E54-250701-095505-1.RGB.tiff",
+      "sha256": "04d02ec72d0c69f52583285f9d54c02a11972669d4c826c8837e6c63a75a734b"
+    },
+    {
+      "archivo": "train/RUSSET/704F3E54-250701-095613-7.RGB.tiff",
+      "sha256": "a4f6916d4efc32362ddec4763c595b19b96d78e390d841f82c1e14d03b6f08c1"
+    },
+    {
+      "archivo": "train/RUSSET/704F3E54-260228-214845-3.RGB.tiff",
+      "sha256": "c54250fb8b6176dbffbb3de49819917254177a75f4d3ee8a16fa72bf1e0e3a66"
+    },
+    {
+      "archivo": "train/RUSSET/704F3E54-260228-215741-3.RGB.tiff",
+      "sha256": "f1eb272aad5b89cce83a14c0f3db441e3303dc236bec978e4e6bc3a37e4fc164"
+    },
+    {
+      "archivo": "train/RUSSET/704F3E54-260310-155641-0.RGB.tiff",
+      "sha256": "4fd542fee5179d5a362ae6cad44e49fd26ace5416da950f826263eaacbab2710"
+    },
+    {
+      "archivo": "train/RUSSET/704F3E54-260310-155645-2.RGB.tiff",
+      "sha256": "27e51853b0cb4e64b78b5d4c66399d4c13fc883209db78215df76e5943394965"
+    },
+    {
+      "archivo": "train/RUSSET/704F3E54-260414-211759-3.RGB.tiff",
+      "sha256": "39cb4c5fc4ce884782171420e64bce98e37156d2fa746fc15aba30a9f8a83480"
+    },
+    {
+      "archivo": "train/RUSSET/704F3E54-260414-211811-6.RGB.tiff",
+      "sha256": "dbc63e1bc188ecebe88e99c2578dbf873d84dfc2083593fc14d19e4055edec50"
+    },
+    {
+      "archivo": "train/RUSSET/704F3E54-260423-155728-0.RGB.tiff",
+      "sha256": "66f83672471c01ec9be8347069c9e34f9251f10812ddf3472e8230984bf78fa4"
+    },
+    {
+      "archivo": "train/RUSSET/704F3E54-260423-155732-3.RGB.tiff",
+      "sha256": "cabdf5eb590e07b10c848d3702df5f4261e4184880509d66c8669ebcbe98df9d"
+    },
+    {
+      "archivo": "train/RUSSET/704F3E54-260423-155745-3.RGB.tiff",
+      "sha256": "6c95bf7df805ae9b9bc563de77d7acda5cff43f836b826852ce55f5a1d5068a0"
+    }
+  ],
+  "versiones": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "matplotlib": "3.11.2",
+    "Pillow": "12.3.0",
+    "tensorflow": "2.21.0"
+  }
+}
