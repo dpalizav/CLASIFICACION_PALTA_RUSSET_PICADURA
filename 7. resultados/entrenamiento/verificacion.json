@@ -1,0 +1,54 @@
+{
+  "experimentos_completos": [
+    "B0",
+    "V1"
+  ],
+  "V2": {
+    "estado": "no_ejecutada",
+    "causa": "El responsable confirmó que debe conservarse el orden horizontal de las capturas; RandomFlip lo invierte."
+  },
+  "archivos_dataset_verificados": 829,
+  "pares_duplicados": 2,
+  "pares_etiqueta_contradictoria": 1,
+  "exclusiones_logicas": 4,
+  "elegibles": {
+    "train": 572,
+    "validation": 127,
+    "test": 126
+  },
+  "dataset_modificado": false,
+  "test_evaluado": false,
+  "validaciones": [
+    "SHA-256 de todos los archivos coincide con EDA",
+    "Métricas recalculadas desde predicciones",
+    "Matrices de confusión recalculadas",
+    "Protocolo común idéntico",
+    "Todos los notebooks válidos según nbformat",
+    "Notebook de entrenamiento ejecutado en modo seguro",
+    "Hashes originales de EDA, FE, resultados históricos y README conservados",
+    "PDF de 8 páginas renderizado e inspeccionado"
+  ],
+  "limite_docx": "Validación estructural y de contenido. No se pudo renderizar Word: LibreOffice no disponible y automatización COM denegada. PDF generado desde el mismo contenido con ReportLab e inspeccionado; paginación puede diferir.",
+  "entorno": {
+    "python": "3.11.9",
+    "tensorflow": "2.21.0",
+    "keras": "3.15.1",
+    "dispositivo": "CPU",
+    "intra_op_threads": 8,
+    "inter_op_threads": 2
+  },
+  "pesos_imagenet_sha256": "66c8b43daff3fcc15bc4f30e3d2a167e21a14d9c9598a5394e5516471f4af504",
+  "archivos_originales_conservados_sha256": {
+    "README.md": "f71f7e56317c16a0bba0fa85319fe7c3e321db4c3be3c548d9dee31e6efc8a8c",
+    "1. fuentes\\bitacora_proyecto_clasificacion_palta.ipynb": "6c296c85870e2d828df5b6010538633e6f651c123dfe820307107ee9eddc9d6f",
+    "4. EDA\\01_EDA.ipynb": "2f3fa6fbe8790688652db07f28d7e5915260ef5ef41f618c546683b76a7b679e",
+    "5. feature_engineering\\feature_engineering_palta.ipynb": "c74d4ad7d3a4f643887d45974f0c88a8956ca77214f2c68abcff3cea5a5b23c9",
+    "7. resultados\\eda\\eda_calidad.csv": "b7fdc4bad56d526992162273ebe60b9500749390eb240afa69a72c159f3bdfb0",
+    "7. resultados\\eda\\eda_distribucion.csv": "eaed00bcdc716bb37ca99565e6b18713f4145b7c8057c190cb8259b2fde74404",
+    "7. resultados\\eda\\eda_duplicados.csv": "2898e14e70d6b6a5127541ed8c85469418307f37b81875e2570d0ce54e4039a3",
+    "7. resultados\\eda\\eda_inventario.csv": "19f6abd51c002bdec2866d7d0b28b5a9e284af8b69555a4a7fb170115ff0a078",
+    "7. resultados\\eda\\eda_resumen.json": "c26198b24ae1d5ad46312c37ddac34249eff87ca47b110d61fa31a41fef90d30",
+    "7. resultados\\feature_engineering\\fe_caracteristicas_train.csv": "8b3bbd47c85733cf81917b40972c9a65426f456f410c3572ef609d25f5125438",
+    "7. resultados\\feature_engineering\\fe_resumen.json": "e17bd652adac01381058fbd9b8cd3b66da3038318f362e42a391333e2ba229c4"
+  }
+}

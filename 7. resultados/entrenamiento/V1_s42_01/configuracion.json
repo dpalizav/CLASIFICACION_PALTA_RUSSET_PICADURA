@@ -1,0 +1,53 @@
+{
+  "condicion": "V1",
+  "nombre_ejecucion": "V1_s42_01",
+  "tamano_entrada": [
+    384,
+    768
+  ],
+  "volteo_horizontal": false,
+  "protocolo_comun": {
+    "arquitectura": "ResNet50 congelada + GAP + Dropout(0.35) + Dense softmax",
+    "pesos_base": "imagenet",
+    "extractor_determinista_en_memoria": true,
+    "clases": [
+      "PICADURA",
+      "RUSSET"
+    ],
+    "sha256_dataset": "97425b1ba327552b949961eeff19dd2d3f5d19b79ef67188252c28677f9540a1",
+    "sha256_manifiesto": "ef9f3e9a5b06652250f7fb019a230100c0d6b9c52db89d29dd6c52d5c60cdc7f",
+    "semilla": 42,
+    "tamano_lote": 8,
+    "epocas_maximas": 35,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "loss": "sparse_categorical_crossentropy",
+    "monitor": "val_loss",
+    "early_stopping_patience": 7,
+    "reduce_lr_patience": 3,
+    "reduce_lr_factor": 0.2,
+    "pesos_clases": {
+      "0": 0.5777777777777777,
+      "1": 3.7142857142857144
+    }
+  },
+  "firma_protocolo": "77b24d668ad6576393d3d7ee693c44f39255695b6570b740e9e8acc1835f29d3",
+  "exclusiones": [
+    "test/RUSSET/704F3E54-250612-145719-5.RGB.tiff",
+    "train/PICADURA/704F3E54-250505-153013-0.RGB.tiff",
+    "train/PICADURA/704F3E54-250612-145719-5.RGB.tiff",
+    "validation/PICADURA/defecto.RGB.tiff"
+  ],
+  "n_train": 572,
+  "n_validation": 127,
+  "preprocesamiento": "RGB float32 0-255; preprocess_input dentro del modelo",
+  "versiones": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "Pillow": "12.3.0",
+    "tensorflow": "2.21.0",
+    "scikit-learn": "1.9.1"
+  },
+  "python": "3.11.9",
+  "estrategia": "caracteristicas congeladas en memoria"
+}

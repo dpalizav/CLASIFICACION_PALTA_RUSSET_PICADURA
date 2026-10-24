@@ -1,0 +1,13 @@
+{
+  "estado": "completo",
+  "particion": "validation",
+  "n_imagenes": 127,
+  "condicion": "V1",
+  "nombre_ejecucion": "V1_s42_01",
+  "firma_protocolo": "77b24d668ad6576393d3d7ee693c44f39255695b6570b740e9e8acc1835f29d3",
+  "accuracy": 0.8582677165354331,
+  "macro_f1": 0.6598214285714286,
+  "balanced_accuracy": 0.6287061994609164,
+  "recall_picadura": 0.9716981132075472,
+  "recall_russet": 0.2857142857142857
+}
