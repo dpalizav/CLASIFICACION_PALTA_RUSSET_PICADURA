@@ -1,0 +1,61 @@
+{
+  "condicion": "FT_D1_PHOTO",
+  "origen": "D1_s42_03",
+  "referencia": "FT_D1_s42_03",
+  "nombre_ejecucion": "FT_D1_PHOTO_s42_01",
+  "tamano_entrada": [
+    256,
+    512
+  ],
+  "clases": [
+    "PICADURA",
+    "RUSSET"
+  ],
+  "n_train_original": 572,
+  "n_train_efectivo": 649,
+  "n_validation": 127,
+  "copias_russet_por_fruto": 1,
+  "aumento_adicional": {
+    "brillo": [
+      0.95,
+      1.05
+    ],
+    "contraste": [
+      0.95,
+      1.05
+    ],
+    "ambas_clases": true,
+    "por_visita": true,
+    "mantiene_relleno": true,
+    "aplicado_solo_en": "train"
+  },
+  "protocolo_comun": {
+    "tamano_lote": 1,
+    "epocas_maximas": 8,
+    "learning_rate": 1e-05,
+    "bloque_ajustado": "conv5",
+    "batch_normalization": "congelada",
+    "semilla": 42,
+    "sha256_dataset": "97425b1ba327552b949961eeff19dd2d3f5d19b79ef67188252c28677f9540a1",
+    "sha256_manifiesto": "ef9f3e9a5b06652250f7fb019a230100c0d6b9c52db89d29dd6c52d5c60cdc7f"
+  },
+  "exclusiones": [
+    "test/RUSSET/704F3E54-250612-145719-5.RGB.tiff",
+    "train/PICADURA/704F3E54-250505-153013-0.RGB.tiff",
+    "train/PICADURA/704F3E54-250612-145719-5.RGB.tiff",
+    "validation/PICADURA/defecto.RGB.tiff"
+  ],
+  "pesos_fit": {
+    "0": 0.6555555555555556,
+    "1": 2.107142857142857
+  },
+  "versiones": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "Pillow": "13.0.0",
+    "tensorflow": "2.21.0",
+    "scikit-learn": "1.9.1"
+  },
+  "python": "3.12.14",
+  "firma_protocolo": "7789918692f51b07bf5d92acb9bd57eede906b9460161ac8410302c7cef1a8bc"
+}

@@ -1,0 +1,22 @@
+{
+  "modelo_seleccionado": "FT_D1_PHOTO_s42_01",
+  "particion": "test",
+  "n_test_elegible": 126,
+  "firma_protocolo": "7789918692f51b07bf5d92acb9bd57eede906b9460161ac8410302c7cef1a8bc",
+  "sha256_checkpoint": "d273174144bc2b3a9a2835665a38edf028623bd9ef5eabe6c70a068a9032717e",
+  "sha256_dataset": "97425b1ba327552b949961eeff19dd2d3f5d19b79ef67188252c28677f9540a1",
+  "sha256_manifiesto": "ef9f3e9a5b06652250f7fb019a230100c0d6b9c52db89d29dd6c52d5c60cdc7f",
+  "clases": [
+    "PICADURA",
+    "RUSSET"
+  ],
+  "tamano_entrada": [
+    256,
+    512
+  ],
+  "regla_prediccion": "argmax_softmax_sin_ajuste_umbral",
+  "augmentation_en_test": false,
+  "fecha_utc": "2026-10-26T17:13:28.088853+00:00",
+  "python": "3.12.14",
+  "tensorflow": "2.21.0"
+}

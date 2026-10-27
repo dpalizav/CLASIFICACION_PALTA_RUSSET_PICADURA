@@ -1,0 +1,30 @@
+{
+  "estado": "completo",
+  "particion": "test",
+  "modelo": "FT_D1_PHOTO_s42_01",
+  "n_imagenes": 126,
+  "clases": [
+    "PICADURA",
+    "RUSSET"
+  ],
+  "firma_protocolo": "7789918692f51b07bf5d92acb9bd57eede906b9460161ac8410302c7cef1a8bc",
+  "sha256_checkpoint": "d273174144bc2b3a9a2835665a38edf028623bd9ef5eabe6c70a068a9032717e",
+  "accuracy": 0.9444444444444444,
+  "macro_f1": 0.9018582396795372,
+  "balanced_accuracy": 0.9264150943396227,
+  "precision_russet": 0.782608695652174,
+  "recall_russet": 0.9,
+  "f1_russet": 0.8372093023255814,
+  "recall_picadura": 0.9528301886792453,
+  "aciertos": 119,
+  "aciertos_russet": 18,
+  "n_russet": 20,
+  "intervalo95_wilson_accuracy": [
+    0.8897591867415384,
+    0.9728312448298406
+  ],
+  "intervalo95_wilson_recall_russet": [
+    0.6989663547715128,
+    0.9721335187862319
+  ]
+}

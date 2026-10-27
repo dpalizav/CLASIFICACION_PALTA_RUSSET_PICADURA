@@ -1,0 +1,6 @@
+{
+  "estado": "entrenamiento_completo",
+  "epocas": 8,
+  "mejor_epoca_val_loss": 5,
+  "segundos_entrenamiento": 645.55
+}

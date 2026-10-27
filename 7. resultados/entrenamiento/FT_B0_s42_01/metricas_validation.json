@@ -1,0 +1,13 @@
+{
+  "estado": "completo",
+  "particion": "validation",
+  "n_imagenes": 127,
+  "condicion": "FT_B0",
+  "nombre_ejecucion": "FT_B0_s42_01",
+  "firma_protocolo": "96b1440f7077935a2f6260d0dde34158404e7c8fb8fed699c24fb47feb394af2",
+  "accuracy": 0.8661417322834646,
+  "macro_f1": 0.7183300717547292,
+  "balanced_accuracy": 0.6907008086253369,
+  "recall_picadura": 0.9528301886792453,
+  "recall_russet": 0.42857142857142855
+}

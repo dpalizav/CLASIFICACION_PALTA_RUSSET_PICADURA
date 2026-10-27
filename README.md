@@ -1,115 +1,78 @@
-# Clasificación de defectos en palta Hass mediante visión por computadora
+# Clasificacion de defectos superficiales en palta Hass
 
-**Autor:** Luis Daniel Paliza Vilca  
-**Etapa actual:** Feature Engineering  
-**Modelo principal:** ResNet50 mediante Transfer Learning, con TensorFlow/Keras.
+Clasificacion binaria PICADURA y RUSSET con ResNet50 y Transfer Learning.
 
-## Objetivo
+## Datos
 
-Preparar imágenes de palta Hass para diferenciar las clases PICADURA y RUSSET.
-Cada archivo contiene una palta con tres franjas de cámaras y vistas por rotación.
-Las vistas de un mismo fruto conservan su etiqueta y partición; no son muestras
-independientes. La entrega actual prepara características y entradas para el modelo,
-sin entrenamiento.
+Cada TIFF representa una palta con tres franjas de camaras. Las franjas muestran hasta 30 vistas del mismo fruto. Las vistas se conservan juntas; no se consideran 30 muestras independientes.
 
-## Organización
+El dataset no esta dentro del repositorio. La disposicion utilizada es:
 
-| Ubicación | Contenido |
+```text
+Carpeta de trabajo/
+  DATASET_PALTA/
+    train/PICADURA/
+    train/RUSSET/
+    validation/PICADURA/
+    validation/RUSSET/
+    test/PICADURA/
+    test/RUSSET/
+  PROYECTO_TI_2/
+```
+
+En los notebooks de entrenamiento la ruta relativa es `../DATASET_PALTA`. No cambiar las particiones ni los TIFF originales.
+
+## Archivos principales
+
+| Archivo | Uso |
 |---|---|
-| `1. fuentes/` | Bitácora técnica actualizada. |
-| `2. informe/` | Carpeta existente conservada, vacía en el adjunto. |
-| `3. presentacion/` | Carpeta existente conservada, vacía en el adjunto. |
-| `4. EDA/01_EDA.ipynb` | Inventario, distribución, calidad, duplicados y leakage. |
-| `4. EDA/ejecutar_eda.py` | Ejecutor del EDA; guarda el notebook solo si termina correctamente. |
-| `5. feature_engineering/feature_engineering_palta.ipynb` | Tamaño, normalización, RGB/HSV, brillo, contraste, histogramas, textura y preparación para ResNet50. |
-| `6. entrenamiento/resnet50.ipynb` | Baseline existente adaptado a ResNet50; funciones futuras sin llamadas automáticas. |
-| `7. resultados/eda/` | Cinco reportes históricos del EDA. |
-| `7. resultados/feature_engineering/` | Destino de tablas y configuración al ejecutar FE con imágenes. |
-| `utilidades_imagenes.py` | Rutas portables, lectura TIFF, resize con relleno y carga por lotes. |
-| `requirements.txt` | Dependencias básicas de EDA y FE. |
-| `requirements_resnet50.txt` | Dependencias adicionales del pipeline TensorFlow y las métricas futuras. |
-| `CAMBIOS.md` | Archivos modificados, nuevos, movidos y conservados; alcance de la validación. |
+| `4. EDA/01_EDA.ipynb` | Inventario, clases, calidad y duplicados. |
+| `5. feature_engineering/feature_engineering_palta.ipynb` | Transformaciones y descriptores de imagen. |
+| `6. entrenamiento/resnet50.ipynb` | Baseline, resolucion, balanceo y fine-tuning opcional. |
+| `2. informe/Informe.ipynb` | Informe con tablas y figuras que lee las metricas guardadas. |
+| `7. resultados/` | EDA, FE y corridas de clasificacion. |
+| `utilidades_imagenes.py` | Lectura TIFF y resize proporcional. |
 
-El **EDA comprende y audita** los datos. **Feature Engineering transforma y prepara**
-su representación. Las estadísticas de color del EDA siguen siendo diagnósticas;
-la preparación de entradas y descriptores está en el notebook de FE.
+## Estado de los experimentos
 
-## Dataset y rutas
+El EDA registro 829 archivos y dos pares exactos entre particiones. La auditoria de entrenamiento verifico los hashes y excluyo cuatro rutas de las listas experimentales. Quedaron 572 archivos de train, 127 de validation y 126 de test reservado.
 
-El RAR no contiene los TIFF. Mantener `DATASET_PALTA` en su ubicación actual, dentro
-o junto a la carpeta del proyecto. Debe conservar estas rutas:
+El Feature Engineering se ejecuto con 24 imagenes de entrenamiento. B0 y V1 tienen resultados reales de ResNet50 congelada sobre validation:
 
-- `DATASET_PALTA/train/PICADURA/` y `DATASET_PALTA/train/RUSSET/`.
-- `DATASET_PALTA/validation/PICADURA/` y `DATASET_PALTA/validation/RUSSET/`.
-- `DATASET_PALTA/test/PICADURA/` y `DATASET_PALTA/test/RUSSET/`.
+| Corrida | Entrada | Macro-F1 | Recall RUSSET |
+|---|---|---:|---:|
+| B0 | 256 x 512 | 0.6604 | 0.3333 |
+| V1 | 384 x 768 | 0.6598 | 0.2857 |
 
-La búsqueda funciona desde la raíz o la carpeta del notebook. Si hay dos copias,
-seleccionar una ruta relativa: `"../DATASET_PALTA"` o `"DATASET_PALTA"` en
-`RUTA_DATASET_RELATIVA`; en el EDA la variable se llama `RUTA_DATASET_MANUAL`.
-No se crean particiones ni se mueve, renombra o sobrescribe ninguna imagen.
+Las nuevas condiciones D1 y D2 estan preparadas, pero aun requieren ejecucion con los TIFF locales:
 
-## Ejecución en VS Code
+- D1: una copia fotometrica por fruto RUSSET, sin escribir archivos de imagen.
+- D2: dos copias fotometricas por fruto RUSSET, con el mismo procedimiento.
+- FT_B0 y FT_D1: ajuste fino parcial del bloque conv5, opcional y solo despues de entrenar la cabeza correspondiente.
 
-Usar Python 3.12. Abrir una terminal en la raíz del proyecto:
+El volteo horizontal V2 no se utiliza: cambia el orden de las vistas dentro de las franjas. Validation y test nunca reciben augmentation.
 
-```powershell
-py -3.12 -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-```
+## Ejecucion en VS Code
 
-Seleccionar `.venv` como kernel en VS Code, con la extensión Jupyter.
-En Linux/macOS se pueden usar `python3 -m venv .venv` y
-`.venv/bin/python -m pip install -r requirements.txt`.
+1. Abrir la carpeta `PROYECTO_TI_2`, junto al dataset original.
+2. Abrir `6. entrenamiento/resnet50.ipynb` y seleccionar `Python (palta TensorFlow)`.
+3. Ejecutar el notebook con `ENTRENAR = False`, `REVISAR_INTEGRIDAD = False` y `EJECUTAR_FT = False`.
+4. Revisar los cuatro archivos propuestos para excluir. Activar `REVISAR_INTEGRIDAD = True` y, tras revisar, `APROBAR_EXCLUSIONES = True` para comprobar los SHA-256.
+5. Elegir `CONDICION = "D1"`, activar `ENTRENAR = True` y ejecutar solamente la celda de control. Los pesos de ImageNet pueden descargarse la primera vez.
+6. Desactivar `ENTRENAR` al terminar. Ejecutar D2 si se necesita la segunda variante.
+7. Si se hara fine-tuning, utilizar el control separado `EJECUTAR_FT` y comenzar con FT_B0. La corrida B0 congelada y su archivo de pesos deben estar presentes.
+8. Abrir `2. informe/Informe.ipynb` y ejecutar Run All para actualizar cuadros y graficos desde los CSV, JSON y PNG guardados.
 
-1. Leer `4. EDA/01_EDA.ipynb`: conserva tablas y gráficos de la ejecución histórica.
-2. Abrir `5. feature_engineering/feature_engineering_palta.ipynb` y ejecutar las celdas
-   en orden. Con el dataset disponible, toma hasta 12 archivos por clase de train.
-   Sin el dataset, muestra los pendientes y no genera resultados ficticios.
-3. Para verificar un lote con TensorFlow, instalar las dependencias adicionales:
+Las corridas existentes no se sobrescriben. Para repetir una condicion usar otra `REPETICION` sin borrar resultados previos.
 
-```powershell
-.\.venv\Scripts\python.exe -m pip install -r requirements_resnet50.txt
-```
+## CPU y GPU
 
-FE comprueba la equivalencia del preprocesamiento cuando TensorFlow está instalado.
-La extracción profunda queda desactivada con `EXTRAER_CARACTERISTICAS_PROFUNDAS = False`.
-Ejecutar todo en `resnet50.ipynb` solo define funciones; no inicia entrenamiento ni
-descarga pesos. No hace falta una GPU para el avance de FE.
+El entorno anterior utilizo Python 3.11 y TensorFlow 2.21 en Windows. CPU es suficiente para probar D1 y D2, aunque extraer caracteristicas lleva tiempo.
 
-Para recalcular el EDA con el dataset local:
+Si existe una GPU NVIDIA compatible, comprobar primero el resultado de la seccion `Comprobar GPU` del notebook. En Windows, TensorFlow 2.11 en adelante no usa GPU CUDA de manera nativa. Se recomienda configurar WSL2 y TensorFlow con soporte CUDA en un entorno separado. No modificar el entorno CPU que ya funciona hasta validar la instalacion nueva.
 
-```powershell
-.\.venv\Scripts\python.exe "4. EDA\ejecutar_eda.py"
-```
+## Publicacion
 
-La ejecución actualiza los cinco reportes `eda_*` en `7. resultados/eda/`. FE guarda
-sus tablas y configuración en `7. resultados/feature_engineering/`. Todos los cambios
-de tamaño y color ocurren en memoria; los originales permanecen intactos.
+No subir TIFF, copias aumentadas, dataset, entornos, cache de ImageNet ni checkpoints del modelo. Los archivos `.h5`, `.keras`, TIFF y `.venv` estan excluidos en `.gitignore`.
 
-## Decisiones de preparación
-
-- Entrada inicial: **256 × 512 píxeles, alto × ancho**, con proporción conservada y
-  relleno. Mantiene las tres franjas; aún falta validar detalle de defectos pequeños.
-- RGB `[0, 1]` se usa para descriptores. ResNet50 recibe RGB `float32` `[0, 255]` y
-  aplica su `preprocess_input` una vez, dentro del modelo. No combinar ambos escalados.
-- Histogramas, HSV y GLCM son características descriptivas; no se concatenan al modelo.
-- Volteo horizontal propuesto solo para train, sujeto a revisión visual. Validación y
-  test permanecen deterministas. No se generan copias físicas aumentadas.
-
-## Estado actual
-
-El EDA adjunto documenta **829 imágenes**, PICADURA: 710 y RUSSET: 119, y **dos pares
-exactos entre particiones**, uno con etiquetas contradictorias. Son resultados
-históricos del 9 de octubre de 2026, conservados sin recalcular durante esta revisión.
-No se ha demostrado independencia por fruto/lote.
-
-Feature Engineering está implementado y queda pendiente su ejecución sobre los TIFF
-originales para obtener resultados del avance. Las pruebas técnicas de esta revisión
-se describen en `CAMBIOS.md`; no sustituyen esa ejecución. El entrenamiento futuro
-verifica la auditoría y permanece bloqueado por las incidencias registradas.
-
-Antes de entrenar: revisar duplicados y etiquetas, documentar fruto/lote y procedencia,
-validar tamaño y augmentation, y fijar evaluación por fruto. No ajustar decisiones
-con test. Métricas previstas: F1 por clase, macro-F1, balanced accuracy y matriz de
-confusión. La referencia histórica a MobileNetV3Small se conserva solo para explicar
-la adaptación del baseline.
+Repositorio: https://github.com/dpalizav/CLASIFICACION_PALTA_RUSSET_PICADURA

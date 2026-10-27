@@ -1,0 +1,30 @@
+{
+  "condicion": "FT_B0",
+  "origen": "B0_s42_01",
+  "nombre_ejecucion": "FT_B0_s42_01",
+  "tamano_entrada": [
+    256,
+    512
+  ],
+  "exclusiones": [
+    "test/RUSSET/704F3E54-250612-145719-5.RGB.tiff",
+    "train/PICADURA/704F3E54-250505-153013-0.RGB.tiff",
+    "train/PICADURA/704F3E54-250612-145719-5.RGB.tiff",
+    "validation/PICADURA/defecto.RGB.tiff"
+  ],
+  "copias_russet_por_fruto": 0,
+  "n_train_efectivo": 572,
+  "pesos_fit": {
+    "0": 0.5777777777777777,
+    "1": 3.7142857142857144
+  },
+  "protocolo_comun": {
+    "tamano_lote": 1,
+    "epocas_maximas": 8,
+    "learning_rate": 1e-05,
+    "bloque_ajustado": "conv5",
+    "batch_normalization": "congelada",
+    "semilla": 42
+  },
+  "firma_protocolo": "96b1440f7077935a2f6260d0dde34158404e7c8fb8fed699c24fb47feb394af2"
+}

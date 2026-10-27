@@ -2,3 +2,5 @@ condicion,ejecucion,estado,accuracy,macro_f1,balanced_accuracy,recall_picadura,r
 B0,B0_s42_01,completo,0.84251968503937,0.660427807486631,0.6383647798742138,0.9433962264150944,0.3333333333333333,,0.0
 V1,V1_s42_01,completo,0.8582677165354331,0.6598214285714286,0.6287061994609164,0.9716981132075472,0.2857142857142857,,-0.0006063789152024324
 V2,V2_s42_01,no_ejecutada,,,,,,Volteo incompatible con el orden requerido de capturas,
+D1,D1_s42_01,pendiente,,,,,,,
+D2,D2_s42_01,pendiente,,,,,,,

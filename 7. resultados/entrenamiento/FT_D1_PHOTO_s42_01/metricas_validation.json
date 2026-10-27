@@ -1,0 +1,15 @@
+{
+  "estado": "completo",
+  "particion": "validation",
+  "n_imagenes": 127,
+  "condicion": "FT_D1_PHOTO",
+  "nombre_ejecucion": "FT_D1_PHOTO_s42_01",
+  "firma_protocolo": "7789918692f51b07bf5d92acb9bd57eede906b9460161ac8410302c7cef1a8bc",
+  "accuracy": 0.8740157480314961,
+  "macro_f1": 0.7876254180602007,
+  "balanced_accuracy": 0.8099730458221024,
+  "recall_picadura": 0.9056603773584906,
+  "recall_russet": 0.7142857142857143,
+  "precision_russet": 0.6,
+  "f1_russet": 0.6521739130434783
+}

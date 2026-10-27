@@ -30,3 +30,16 @@ Thumbs.db
 *.npz
 checkpoints/
 saved_model/
+
+# Modelos entrenados
+*.h5
+*.keras
+
+# Archivos temporales de Python y Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Entornos virtuales
+.venv/
+venv/
