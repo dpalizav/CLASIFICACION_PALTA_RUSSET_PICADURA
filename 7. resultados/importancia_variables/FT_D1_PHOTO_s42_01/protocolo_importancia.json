@@ -1,0 +1,21 @@
+{
+  "sprint": "07_importancia_variables",
+  "modelo": "FT_D1_PHOTO_s42_01",
+  "particion": "validation",
+  "n_imagenes": 127,
+  "n_picadura": 106,
+  "n_russet": 21,
+  "sha256_checkpoint": "d273174144bc2b3a9a2835665a38edf028623bd9ef5eabe6c70a068a9032717e",
+  "firma_protocolo": "7789918692f51b07bf5d92acb9bd57eede906b9460161ac8410302c7cef1a8bc",
+  "metodo_camara": "ocultacion_y_desenfoque_de_tercio_horizontal_en_TIFF_original",
+  "metodo_fotometrico": "brillo_y_contraste_fijos_0.95_1.05",
+  "bootstrap_remuestreo": "emparejado_estratificado_por_clase_en_unidad_TIFF",
+  "bootstrap_repeticiones": 500,
+  "reproduccion_exacta_validation": false,
+  "diferencia_max_probabilidad_validation_historica": 0.004966769391250625,
+  "etiquetas_distintas_validation_historica": 1,
+  "test_inferido": false,
+  "modelo_reentrenado": false,
+  "gradcam_ejecutado": true,
+  "fecha_utc": "2026-10-30T07:42:15.906439+00:00"
+}
