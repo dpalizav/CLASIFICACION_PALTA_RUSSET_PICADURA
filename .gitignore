@@ -43,3 +43,6 @@ __pycache__/
 # Entornos virtuales
 .venv/
 venv/
+
+# Base de datos local de Optuna
+/7. resultados/optimizacion_hiperparametros/optuna_hpo.sqlite3

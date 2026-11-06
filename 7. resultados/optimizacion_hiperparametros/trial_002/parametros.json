@@ -1,0 +1,10 @@
+{
+  "trial": 2,
+  "learning_rate": 1.6185092900010657e-05,
+  "dropout": 0.3697316968394073,
+  "semilla": 42,
+  "origen": "D1_s42_03",
+  "max_epocas": 8,
+  "lote": 1,
+  "configuracion_busqueda": "7. resultados/optimizacion_hiperparametros/configuracion_busqueda.json"
+}

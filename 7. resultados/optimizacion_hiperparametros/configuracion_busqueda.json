@@ -1,0 +1,41 @@
+{
+  "clasificacion": "PICADURA vs RUSSET",
+  "metodo": "Optuna RandomSampler, busqueda aleatoria",
+  "presupuesto_inicial_trials": 8,
+  "metrica_objetivo": "macro_f1_validation",
+  "seleccion_checkpoint": "minima val_loss",
+  "learning_rate_rango_log": [
+    3e-06,
+    3e-05
+  ],
+  "dropout_rango_lineal": [
+    0.25,
+    0.45
+  ],
+  "trial_referencia": {
+    "learning_rate": 1e-05,
+    "dropout": 0.35
+  },
+  "semilla": 42,
+  "epocas_maximas": 8,
+  "lote": 1,
+  "early_stopping": {
+    "monitor": "val_loss",
+    "patience": 4
+  },
+  "reduccion_lr": {
+    "monitor": "val_loss",
+    "factor": 0.2,
+    "patience": 2
+  },
+  "model": "ResNet50 ImageNet; fine-tuning conv5; BN congelado",
+  "inicio": "D1_s42_03",
+  "referencia_historica": "FT_D1_PHOTO_s42_01",
+  "n_train": 572,
+  "n_train_efectivo": 649,
+  "n_validation": 127,
+  "sha256_dataset": "97425b1ba327552b949961eeff19dd2d3f5d19b79ef67188252c28677f9540a1",
+  "sha256_manifiesto": "ef9f3e9a5b06652250f7fb019a230100c0d6b9c52db89d29dd6c52d5c60cdc7f",
+  "sha256_notebook_origen": "eedd285350a1d06d5e98b16d80aa93e8fa3231a60e60b944dacefc29740c5621",
+  "notas": "TEST solo se verifica por hashes en la auditoria; no se usa en el objetivo."
+}

@@ -1,0 +1,27 @@
+{
+  "estado": "completo",
+  "particion": "validation",
+  "trial": 0,
+  "learning_rate": 1e-05,
+  "dropout": 0.35,
+  "accuracy": 0.8740157480314961,
+  "macro_f1": 0.7876254180602007,
+  "recall_russet": 0.7142857142857143,
+  "precision_russet": 0.6,
+  "recall_picadura": 0.9056603773584906,
+  "precision_picadura": 0.9411764705882353,
+  "matriz_confusion": [
+    [
+      96,
+      10
+    ],
+    [
+      6,
+      15
+    ]
+  ],
+  "n_validation": 127,
+  "epocas_ejecutadas": 8,
+  "mejor_epoca_val_loss": 5,
+  "segundos": 633.98
+}
