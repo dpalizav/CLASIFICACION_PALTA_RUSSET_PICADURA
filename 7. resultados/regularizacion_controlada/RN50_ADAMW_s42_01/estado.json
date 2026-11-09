@@ -1,0 +1,10 @@
+{
+  "estado": "completo",
+  "epocas_cabeza": 8,
+  "mejor_epoca_cabeza": 4,
+  "epocas_finetune": 6,
+  "mejor_epoca_finetune": 2,
+  "segundos_transcurridos": 1334.8,
+  "evaluacion_exploratoria_consultada": false,
+  "test_consultado": false
+}
