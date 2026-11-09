@@ -1,0 +1,78 @@
+{
+  "condicion": "RN50_D1_PHOTO_FT_CONV5_BLOCK3",
+  "nombre_ejecucion": "RN50_FT_CONV5B3_s42_01",
+  "origen_pesos_backbone": "ImageNet",
+  "carga_cabeza_historica": false,
+  "entrenamiento_independiente": true,
+  "semilla": 42,
+  "clases": [
+    "PICADURA",
+    "RUSSET"
+  ],
+  "tamano_entrada": [
+    256,
+    512
+  ],
+  "train": 529,
+  "validation": 127,
+  "evaluacion_exploratoria_260423": 43,
+  "evaluacion_exploratoria_consultada": false,
+  "test_consultado": false,
+  "train_efectivo_d1": 584,
+  "copias_russet": 55,
+  "pesos_clase": {
+    "0": 0.6160337552742616,
+    "1": 2.6545454545454548
+  },
+  "epocas_max_cabeza": 8,
+  "epocas_max_finetune": 8,
+  "learning_rate_cabeza": 0.001,
+  "learning_rate_finetune": 1e-05,
+  "dropout": 0.35,
+  "lote": 1,
+  "bloque_finetune": "conv5_block3",
+  "batch_normalization": "congelada",
+  "variable_experimental": "conv5_completo_vs_conv5_block3",
+  "optimizador_cabeza": "Adam",
+  "optimizador_finetune": "Adam",
+  "fotometria_d1": {
+    "brillo": [
+      0.92,
+      1.08
+    ],
+    "contraste": [
+      0.9,
+      1.1
+    ]
+  },
+  "fotometria_extra_finetune": {
+    "brillo": [
+      0.95,
+      1.05
+    ],
+    "contraste": [
+      0.95,
+      1.05
+    ]
+  },
+  "seleccion_checkpoint": "min_val_loss en validation_original",
+  "sha256_manifiesto_260423": "69943bd5e07a91a05969160b304d361666de18573adc25879f2a3e2c7db05ee4",
+  "sha256_dataset": "97425b1ba327552b949961eeff19dd2d3f5d19b79ef67188252c28677f9540a1",
+  "sha256_manifest_original": "ef9f3e9a5b06652250f7fb019a230100c0d6b9c52db89d29dd6c52d5c60cdc7f",
+  "exclusiones_originales": [
+    "test/RUSSET/704F3E54-250612-145719-5.RGB.tiff",
+    "train/PICADURA/704F3E54-250505-153013-0.RGB.tiff",
+    "train/PICADURA/704F3E54-250612-145719-5.RGB.tiff",
+    "validation/PICADURA/defecto.RGB.tiff"
+  ],
+  "versiones": {
+    "tensorflow": "2.21.0",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "Pillow": "13.0.0",
+    "scikit-learn": "1.9.1"
+  },
+  "python": "3.12.14",
+  "limitacion": "Una sola semilla y 21 RUSSET en validation_original; 260423 y TEST no evaluados.",
+  "firma_protocolo": "11e81b274c7ddb86c2d4630c19f1139dc74164b22170e1830f91a1f3b8b0424a"
+}
