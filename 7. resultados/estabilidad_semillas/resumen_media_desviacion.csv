@@ -1,0 +1,5 @@
+,accuracy,accuracy,macro_f1,macro_f1,precision_russet,precision_russet,recall_russet,recall_russet,average_precision_russet,average_precision_russet,brier_russet,brier_russet
+,mean,std,mean,std,mean,std,mean,std,mean,std,mean,std
+modo,,,,,,,,,,,,
+conv5,0.8976,0.0157,0.8027,0.0267,0.7333,0.084,0.619,0.0825,0.8155,0.0449,0.0668,0.0067
+conv5_block3,0.8976,0.0208,0.8178,0.0359,0.6846,0.0673,0.7143,0.0825,0.8017,0.0333,0.071,0.0015

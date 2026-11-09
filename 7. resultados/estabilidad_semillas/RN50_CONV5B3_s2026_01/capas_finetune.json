@@ -1,0 +1,14 @@
+{
+  "modo": "conv5_block3",
+  "n_capas": 7,
+  "capas": [
+    "conv5_block3_1_conv",
+    "conv5_block3_1_relu",
+    "conv5_block3_2_conv",
+    "conv5_block3_2_relu",
+    "conv5_block3_3_conv",
+    "conv5_block3_add",
+    "conv5_block3_out"
+  ],
+  "parametros_ajustables_backbone": 4459520
+}

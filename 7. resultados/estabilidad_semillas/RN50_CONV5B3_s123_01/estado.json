@@ -1,0 +1,12 @@
+{
+  "estado": "completo",
+  "modo": "conv5_block3",
+  "semilla": 123,
+  "epocas_cabeza": 8,
+  "mejor_epoca_cabeza": 5,
+  "epocas_finetune": 5,
+  "mejor_epoca_finetune": 1,
+  "segundos_transcurridos": 1188.84,
+  "evaluacion_exploratoria_consultada": false,
+  "test_consultado": false
+}

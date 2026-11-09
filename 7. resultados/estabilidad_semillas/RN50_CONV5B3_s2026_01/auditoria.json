@@ -1,0 +1,13 @@
+{
+  "sha256_dataset": "97425b1ba327552b949961eeff19dd2d3f5d19b79ef67188252c28677f9540a1",
+  "sha256_manifiesto": "ef9f3e9a5b06652250f7fb019a230100c0d6b9c52db89d29dd6c52d5c60cdc7f",
+  "exclusiones": [
+    "test/RUSSET/704F3E54-250612-145719-5.RGB.tiff",
+    "train/PICADURA/704F3E54-250505-153013-0.RGB.tiff",
+    "train/PICADURA/704F3E54-250612-145719-5.RGB.tiff",
+    "validation/PICADURA/defecto.RGB.tiff"
+  ],
+  "archivos_originales": 829,
+  "archivos_elegibles": 825,
+  "alcance": "Integridad exacta; independencia por fruto/lote pendiente de trazabilidad."
+}

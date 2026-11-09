@@ -1,0 +1,14 @@
+{
+  "estado": "completo",
+  "particion": "validation_original",
+  "n_imagenes": 127,
+  "firma_protocolo": "f63d206438855ab4c8663b6b5888c9254b3269747bae263700c279d42591c4dd",
+  "accuracy": 0.8740157480314961,
+  "macro_f1": 0.7800865800865802,
+  "balanced_accuracy": 0.7908805031446541,
+  "recall_russet": 0.6666666666666666,
+  "precision_russet": 0.6086956521739131,
+  "average_precision_russet": 0.7866008037327947,
+  "roc_auc_russet": 0.9420485175202156,
+  "brier_russet": 0.07222447544336319
+}
