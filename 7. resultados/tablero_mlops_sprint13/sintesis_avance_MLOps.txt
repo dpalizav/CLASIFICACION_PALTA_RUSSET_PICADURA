@@ -1,0 +1,44 @@
+Sintesis de resultados. Proyecto de Investigacion II
+Fecha de corte: 9 de noviembre de 2026
+
+Historico de optimizacion de hiperparametros
+
+Se revisaron 8 ensayos con semilla 42. Son configuraciones diferentes y no corresponden a validacion cruzada.
+La mejor puntuacion macro-F1 se obtuvo en el ensayo 0: 0.7876.
+La menor val_loss registrada corresponde al ensayo 7: 0.2754.
+En 8 de 8 ensayos, val_loss aumento desde su minimo hasta el ultimo registro.
+El tiempo total registrado para los ocho ensayos es 4207.4 segundos.
+La brecha entre TRAIN y VALIDATION bajo condiciones de inferencia equivalentes todavia no fue cuantificada.
+
+Estabilidad del modelo. Sprint 12
+
+Conv5: macro-F1 = 0.8027 +/- 0.0267; recall RUSSET = 0.6190 +/- 0.0825.
+Conv5_block3: macro-F1 = 0.8178 +/- 0.0359; recall RUSSET = 0.7143 +/- 0.0825.
+Conv5_block3 obtuvo mayor recall RUSSET promedio, pero tambien mayor dispersion en macro-F1. Las tres semillas no permiten establecer una ventaja concluyente para todos los criterios.
+Las medias y desviaciones se calcularon con el mismo conjunto de validacion y no corresponden a lotes independientes.
+
+Calibracion historica
+
+En FT_D1_PHOTO, el macro-F1 historico fue 0.7876 y el recalculado 0.7781.
+El recall RUSSET fue 0.7143 en ambas versiones y el Brier fue 0.0984 y 0.0988, respectivamente.
+Se observo una prediccion diferente sobre 127 imagenes. Estos resultados no justifican por si solos cambiar el umbral.
+
+Errores recurrentes del Sprint 13
+
+Se registraron 7 imagenes RUSSET y 2 imagenes PICADURA con clasificacion incorrecta en las cuatro corridas nuevas.
+La asociacion observada entre fecha nominal y clase en validation_original requiere una revision de la procedencia y del protocolo de particion.
+El grupo 260423 permanece reservado y no fue utilizado para calcular las predicciones de este analisis.
+
+Actividades pendientes
+
+1. Evaluar TRAIN y VALIDATION de manera equivalente en modo inferencia para medir la brecha real.
+2. Inspeccionar visualmente las imagenes con errores persistentes y verificar las etiquetas.
+3. Comprobar la comparabilidad del entrenamiento historico de semilla 42 con las corridas nuevas.
+4. Comparar una intervencion de regularizacion de manera controlada cuando el protocolo lo justifique.
+5. Registrar la latencia de inferencia si se requiere para evaluar la aplicacion operativa.
+
+Registro de version
+
+Rama: sprint-12-estabilidad-semillas.
+Commit de referencia: b054265.
+El tablero se genera localmente a partir de archivos existentes y no modifica Git.
